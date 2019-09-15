@@ -1,3 +1,5 @@
-<div class="point" [ngStyle]="{'width': size, 'height': size, top: height + '%', left: width + '%', 'background': background}">
+<div class="point"
+     (click)="counter()"
+     [ngStyle]="{'width': size, 'height': size, top: height + '%', left: width + '%', 'background': background}">
   {{name}}
 </div>
