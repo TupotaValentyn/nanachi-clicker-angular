@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Player} from '../../../model/Game';
 
 @Component({
   selector: 'app-game-panel',
@@ -7,16 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GamePanelComponent implements OnInit {
 
-
-  points = [
+  points: Player[] = [
     {
-      width: '16px',
-      height: '16px',
-      top: '100%',
-      left: '30%'
+      width: 16,
+      height: 16,
+      name: 'PIN',
+      color: 'red',
+      picture: '',
+      score: 0
     }
   ];
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-panel-point',
@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanelPointComponent implements OnInit {
 
-  constructor() { }
+  @Input() width: number;
+  @Input() height: number;
+  @Input() name: string;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
