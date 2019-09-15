@@ -50,7 +50,7 @@ export class SetupComponentComponent implements OnInit {
   }
 
   getDefaultPlayer(n) {
-    return {width: 0, height: 0, picture: null, name: '', color: this.mapColor(n), score: 0}
+    return {width: 0, height: 0, picture: this.mapFile(n), name: '', color: this.mapColor(n), score: 0}
   }
 
   mapColor(n) {
@@ -63,6 +63,19 @@ export class SetupComponentComponent implements OnInit {
         return '#34a853';
       case 3:
         return '#4285f4';
+    }
+  }
+
+  mapFile(n) {
+    switch (n) {
+      case 0:
+        return 'https://vignette.wikia.nocookie.net/miabyss/images/9/9e/Nanachi_Manga.png/revision/latest?cb=20170710002744';
+      case 1:
+        return 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTUqV2XEY79EWLrNE-DYS77p2vPEALxjDBGuSGtohyqfAIDdA2OA';
+      case 2:
+        return 'https://pbs.twimg.com/media/D9zEplUXkAEnDaH.jpg';
+      case 3:
+        return 'http://pm1.narvii.com/7025/c49672883c75098ee7038c4742c08686344d809br1-225-350v2_uhq.jpg';
     }
   }
 
