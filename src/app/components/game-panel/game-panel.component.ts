@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Player} from '../../../model/Game';
+import {interval} from 'rxjs';
 
 @Component({
   selector: 'app-game-panel',
@@ -7,6 +8,7 @@ import {Player} from '../../../model/Game';
   styleUrls: ['./game-panel.component.scss']
 })
 export class GamePanelComponent implements OnInit {
+
 
   points: Player[] = [
     {
@@ -16,7 +18,7 @@ export class GamePanelComponent implements OnInit {
       color: 'red',
       picture: '',
       score: 0
-    } ,{
+    }, {
       width: 56,
       height: 16,
       name: 'NIP',
@@ -44,6 +46,10 @@ export class GamePanelComponent implements OnInit {
   }
 
   ngOnInit() {
+    interval(5000).subscribe(() => {
+      const element = this.points.find(item => item.score === Math.min(...this.points.map(el => el.score)));
+      this.points = this.points.filter(it => it !== element);
+    });
   }
 
 }
