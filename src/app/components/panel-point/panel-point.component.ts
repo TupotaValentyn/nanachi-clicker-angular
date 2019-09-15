@@ -11,13 +11,25 @@ export class PanelPointComponent implements OnInit {
   @Input() height: number;
   @Input() name: string;
   @Input() background: string;
+  @Input() score: number;
 
-  size = '24px';
+  size = '48px';
 
   constructor() {
   }
 
   ngOnInit() {
   }
+
+  counter() {
+    if (this.score) {
+      this.score++;
+      console.log(this.name, this.score);
+      return;
+    }
+
+    this.score = 1;
+  }
+
 
 }
