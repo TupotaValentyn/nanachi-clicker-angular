@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Player} from '../../../model/Player';
 
 @Component({
   selector: 'app-panel-point',
@@ -11,7 +12,7 @@ export class PanelPointComponent implements OnInit {
   @Input() height: number;
   @Input() name: string;
   @Input() background: string;
-  @Input() score: number;
+  @Input() point: Player;
 
   size = '48px';
 
@@ -22,13 +23,13 @@ export class PanelPointComponent implements OnInit {
   }
 
   counter() {
-    if (this.score) {
-      this.score++;
-      console.log(this.name, this.score);
+    if (this.point.score) {
+      this.point.score++;
+      console.log(this.name, this.point.score);
       return;
     }
 
-    this.score = 1;
+    this.point.score = 1;
   }
 
 
