@@ -36,18 +36,13 @@ export class SetupComponentComponent implements OnInit {
   setClass(num: number) {
     switch (num) {
       case 0:
-        return 'player_green';
-        break;
-      case 1:
         return 'player_red';
-        break;
-      case 2:
+      case 1:
         return 'player_yellow';
-        break;
+      case 2:
+        return 'player_green';
       case 3:
         return 'player_blue';
-        break;
-
     }
   }
 

@@ -1,17 +1,17 @@
 <main>
   <h1>Nanaclicker</h1>
-  <select name="a" id="amount_of" (change)="changeAmount($event)">
+  <select class="select_amount" name="a" id="amount_of" (change)="changeAmount($event)">
     <option value="2">2</option>
     <option value="3">3</option>
     <option selected="selected" value="4">4</option>
   </select>
   <div class="user_list">
     <div *ngFor="let player of players; let index = index" class="user_input">
-      <span [ngClass]="setClass(index)">
-      </span>
+      <div [ngClass]="setClass(index)">
+      </div>
       <input type="text" class="name_input" [(ngModel)]="player['name']">
     </div>
   </div>
 
-  <button (click)="onSubmit()">Submit</button>
+  <button class="submit_button" (click)="onSubmit()">Submit</button>
 </main>

@@ -1,0 +1,67 @@
+.player_red {
+  height: 100%;
+  width: 100%;
+  background-color: #ea4335
+}
+
+.player_yellow {
+  height: 100%;
+  width: 100%;
+  background-color: #fbbc05
+}
+.player_green {
+  height: 100%;
+  width: 100%;
+  background-color: #34a853
+}
+.player_blue {
+  height: 100%;
+  width: 100%;
+  background-color: #4285f4
+}
+
+.user_input {
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+main {
+  display: grid;
+  grid-template-rows: 1fr 1fr 5fr 2fr;
+  background-color: #141414;
+  width: 100vw;
+  height: 100vh;
+}
+
+.select_amount {
+  background-color: #141414;
+  color: white;
+  font-size: 30px;
+}
+
+.name_input {
+  background-color: #141414;
+  color: white;
+  font-size: 30px;
+  width: 100%;
+  padding-left: 5px;
+  box-sizing: border-box;
+  line-height: 1.2;
+  border: 1px solid white;
+}
+
+.submit_button {
+  background-color: #141414;
+  color: white;
+  font-size: 40px;
+  border: 1px solid white;
+}
+
+.user_list {
+  display: grid;
+}
