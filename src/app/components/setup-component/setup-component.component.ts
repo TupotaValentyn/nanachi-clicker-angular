@@ -30,7 +30,7 @@ export class SetupComponentComponent implements OnInit {
   }
 
   createPlayers() {
-    this.players = []
+    this.players = [];
     for (let index = this.amountOfPlayer - 1; index >= 0; index--) {
       this.players = [...this.players, this.getDefaultPlayer(index)]
     }

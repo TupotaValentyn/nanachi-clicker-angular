@@ -14,32 +14,34 @@ export class GameServiceService {
       width: 16,
       height: 16,
       name: 'PIN',
-      color: 'red',
+      color: '#ea4335',
       picture: '',
       score: 0
     }, {
       width: 56,
       height: 16,
       name: 'NIP',
-      color: 'red',
+      color: '#fbbc05',
       picture: '',
       score: 0
     }, {
       width: 46,
       height: 26,
-      name: 'NANACHI',
-      color: 'red',
+      name: 'NAN',
+      color: '#34a853',
       picture: '',
       score: 0
     }, {
       width: 46,
       height: 17,
-      name: 'CUSTOM',
-      color: 'red',
+      name: 'CUS',
+      color: '#4285f4',
       picture: '',
       score: 0
     }
   ];
+
+  winner: Player;
 
   createGame(players: Player[]) {
     this.players = players;
@@ -47,6 +49,14 @@ export class GameServiceService {
 
   get getPlayers() {
     return this.players;
+  }
+
+  setWinner(player: Player) {
+    this.winner = player;
+  }
+
+  get getWinner() {
+    return this.winner;
   }
 
 }
