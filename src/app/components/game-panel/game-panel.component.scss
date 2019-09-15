@@ -3,5 +3,24 @@
   height: 100vh;
   position: relative;
   background-image: url('../../../assets/img/bg.png');
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.score {
+  font-size: 4rem;
+}
+
+.score ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+
+.score ul li {
+  display: block;
+  margin: 0 15px;
+}

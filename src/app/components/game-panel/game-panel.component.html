@@ -9,9 +9,9 @@
   >
   </app-panel-point>
 
-  <div>
+  <div class="score">
     <ul>
-      <li *ngFor="let point of points">
+      <li *ngFor="let point of points" [ngStyle]="{'color': point.color}">
         {{point.score}}
       </li>
     </ul>
