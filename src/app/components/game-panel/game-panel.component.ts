@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Player} from '../../../model/Game';
+import {Player} from '../../../model/Player';
 import {interval} from 'rxjs';
 
 @Component({
@@ -45,10 +45,28 @@ export class GamePanelComponent implements OnInit {
   constructor() {
   }
 
+
+  magic() {
+    this.points = this.points.map(item => {
+      const {width, height} = this.randomizer();
+
+      return {...item, width, height};
+    });
+  }
+
+  randomizer() {
+    const width = Math.floor(Math.random() * 101);
+    const height = Math.floor(Math.random() * 101);
+
+    return {width, height};
+  }
+
   ngOnInit() {
     interval(5000).subscribe(() => {
       const element = this.points.find(item => item.score === Math.min(...this.points.map(el => el.score)));
       this.points = this.points.filter(it => it !== element);
+      this.points[this.points.length - 1].score += element.score;
+      this.magic();
     });
   }
 

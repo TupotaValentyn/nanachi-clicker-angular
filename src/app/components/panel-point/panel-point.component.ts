@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Player} from '../../../model/Game';
+import {Player} from '../../../model/Player';
 
 @Component({
   selector: 'app-panel-point',

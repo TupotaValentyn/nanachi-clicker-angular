@@ -8,4 +8,12 @@
     [point]="point"
   >
   </app-panel-point>
+
+  <div>
+    <ul>
+      <li *ngFor="let point of points">
+        {{point.score}}
+      </li>
+    </ul>
+  </div>
 </div>
