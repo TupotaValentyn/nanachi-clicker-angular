@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Player} from '../../../model/Player';
 import {interval} from 'rxjs';
+import {GameServiceService} from '../../services/game-service.service';
 
 @Component({
   selector: 'app-game-panel',
@@ -9,40 +10,26 @@ import {interval} from 'rxjs';
 })
 export class GamePanelComponent implements OnInit {
 
+  points: Player[];
 
-  points: Player[] = [
-    {
-      width: 16,
-      height: 16,
-      name: 'PIN',
-      color: 'red',
-      picture: '',
-      score: 0
-    }, {
-      width: 56,
-      height: 16,
-      name: 'NIP',
-      color: 'red',
-      picture: '',
-      score: 0
-    }, {
-      width: 46,
-      height: 26,
-      name: 'NANACHI',
-      color: 'red',
-      picture: '',
-      score: 0
-    }, {
-      width: 46,
-      height: 17,
-      name: 'CUSTOM',
-      color: 'red',
-      picture: '',
-      score: 0
-    }
-  ];
+  constructor(private gameService: GameServiceService) {
+  }
 
-  constructor() {
+
+  ngOnInit() {
+    this.points = this.gameService.getPlayers;
+
+    interval(5000).subscribe(() => {
+      const element = this.points.find(item => item.score === Math.min(...this.points.map(el => el.score)));
+      this.points = this.points.filter(it => it !== element);
+
+      if (this.points.length === 0) {
+        return false;
+      }
+
+      this.points[this.points.length - 1].score += element.score;
+      this.magic();
+    });
   }
 
 
@@ -59,15 +46,6 @@ export class GamePanelComponent implements OnInit {
     const height = Math.floor(Math.random() * 101);
 
     return {width, height};
-  }
-
-  ngOnInit() {
-    interval(5000).subscribe(() => {
-      const element = this.points.find(item => item.score === Math.min(...this.points.map(el => el.score)));
-      this.points = this.points.filter(it => it !== element);
-      this.points[this.points.length - 1].score += element.score;
-      this.magic();
-    });
   }
 
 }
