@@ -8,6 +8,7 @@ import {SetupComponentComponent} from './components/setup-component/setup-compon
 import {GamePanelComponent} from './components/game-panel/game-panel.component';
 import {PanelPointComponent} from './components/panel-point/panel-point.component';
 import { EndingpageComponent } from './components/endingpage/endingpage.component';
+import { ParticlesModule } from 'angular-particle';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { EndingpageComponent } from './components/endingpage/endingpage.componen
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ParticlesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
