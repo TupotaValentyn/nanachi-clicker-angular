@@ -10,6 +10,9 @@ export class PanelPointComponent implements OnInit {
   @Input() width: number;
   @Input() height: number;
   @Input() name: string;
+  @Input() background: string;
+
+  size = '24px';
 
   constructor() {
   }

@@ -1,9 +1,10 @@
-<div *ngFor="let point of points">
+<div class="game-panel">
   <app-panel-point
-    class="game-panel"
+    *ngFor="let point of points"
     [width]="point.width"
     [height]="point.height"
     [name]="point.name"
+    [background]="point.color"
   >
   </app-panel-point>
 </div>
