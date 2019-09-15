@@ -1,6 +1,7 @@
 import { Player } from './../../../model/Player';
 import { Component, OnInit } from '@angular/core';
 import { GameServiceService } from 'src/app/services/game-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-setup-component',
@@ -11,7 +12,8 @@ export class SetupComponentComponent implements OnInit {
   amountOfPlayer = 4;
   players: Player[];
 
-  constructor(private gameService: GameServiceService) { }
+  constructor(private gameService: GameServiceService,
+              private router: Router) { }
 
   ngOnInit() {
     this.createPlayers();
@@ -19,6 +21,7 @@ export class SetupComponentComponent implements OnInit {
 
   onSubmit() {
     this.gameService.createGame(this.players);
+    this.router.navigate(['/game']);
   }
 
   changeAmount(num: any) {
