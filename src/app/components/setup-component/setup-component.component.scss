@@ -36,6 +36,41 @@ main {
   background-color: #141414;
   width: 100vw;
   height: 100vh;
+
+  padding: 1rem;
+
+  > * {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  button {
+    background-color: #3c3b3b !important;
+    border-radius: 4px;
+  }
+
+  .user_input:first-child {
+    div {
+      border-top-left-radius: 4px;
+    }
+    input {
+      border-top-right-radius: 4px;
+    }
+  }
+
+
+  .user_input:last-child {
+    div {
+      border-bottom-left-radius: 4px;
+    }
+    input {
+      border-bottom-right-radius: 4px;
+    }
+  }
+
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+  }
 }
 
 .select_amount {
